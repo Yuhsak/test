@@ -2,4 +2,15 @@
 layout: default
 ---
 
-{{ site.markdown }}
+<script>
+
+var posts = [
+{% for post in site.pages %}
+{
+	"url": "{{ post.url }}"
+}
+{% unless forloop.last %},{% endunless %}
+{% endfor %}
+];
+
+</script>
