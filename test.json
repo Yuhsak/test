@@ -1,0 +1,12 @@
+---
+title: index.json
+---
+[
+{% for post in site.pages %}
+{
+	"title": "{{ post.title }}",
+	"url": "{{ post.url }}"
+}
+{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
